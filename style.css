@@ -1,0 +1,862 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    overflow: none;
+}
+
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+}
+
+.NAVBAR {
+    position: relative;
+
+}
+
+.navbar1 {
+    margin-top: 12px;
+    height: 6vh;
+    width: 187.4vh;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nb1 {
+    background-color: white;
+    height: 6vh;
+    width: 6vh;
+    border-radius: 20px;
+    margin-left: 86px;
+    background-image: url(https://brandlogos.net/wp-content/uploads/2022/07/olx-logo_brandlogos.net_ijizj.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.nb2 {
+    background-color: white;
+    height: 6vh;
+    width: 6vh;
+    border-radius: 20px;
+    margin-left: 19px;
+    background-image: url(data:image/png;base64,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);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+
+.nb2 p {
+    position: absolute;
+    left: 44px;
+    top: 13px;
+    font-size: small;
+}
+
+.nb2 :hover {
+    color: blue;
+}
+
+.nb3 {
+    background-color: white;
+    height: 6vh;
+    width: 6vh;
+    border-radius: 20px;
+    margin-left: 89px;
+    background-image: url(https://icons-for-free.com/iconfiles/png/512/svg+business+city+commercial+company+location+office+icon-1320185156833521685.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.nb3 p {
+    position: absolute;
+    left: 44px;
+    top: 13px;
+    font-size: small;
+}
+
+.nb3 :hover {
+    color: blue;
+}
+
+.navbar2 {
+    height: 12vh;
+    width: 187.4vh;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.na1 {
+    margin-left: 12px;
+    height: 12vh;
+    width: 12vh;
+    background-color: white;
+    border-radius: 45px;
+    background-image: url(https://pixlok.com/wp-content/uploads/2021/04/OLX-Logo-PNG-768x768.jpg);
+    background-size: cover;
+}
+
+.na2 input {
+    margin-top: 16px;
+    margin-left: 9px;
+    height: 6vh;
+    width: 42vh;
+}
+
+.na3 input {
+    margin-top: 16px;
+    margin-left: 14px;
+    height: 6vh;
+    width: 42vh;
+}
+
+.na4 {
+    height: 6vh;
+    width: 6vh;
+    background-color: white;
+    border-radius: 45px;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLmC6k11DHNICb6jmpNFQcodRa9f2V6_DKFw&usqp=CAU);
+    background-size: cover;
+    position: absolute;
+    top: 16px;
+    left: 760PX;
+}
+
+.na5 {
+    height: 6vh;
+    width: 6vh;
+    background-color: white;
+    border-radius: 45px;
+    background-image: url(https://png.pngtree.com/png-vector/20191004/ourmid/pngtree-bell-icon-png-image_1791341.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 16px;
+    left: 870PX;
+}
+
+.na6 {
+    height: 6vh;
+    width: 6vh;
+    background-color: white;
+    border-radius: 45px;
+    background-image: url(https://www.olx.com.pk/assets/iconProfilePicture.7975761176487dc62e25536d9a36a61d.png);
+    background-size: cover;
+    position: relative;
+    position: absolute;
+    top: 16px;
+    left: 988PX;
+}
+
+.na6 p {
+    position: absolute;
+    top: 14px;
+    left: 42px;
+}
+
+.na7 {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMkKXd_xsJu04Vaw_pvOtxfLGW7ROFqKoFog&usqp=CAU);
+    height: 13px;
+    width: 15px;
+    background-size: cover;
+
+}
+
+.bt1 {
+    border-color: white;
+    position: absolute;
+    top: 36px;
+    left: 1098PX;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMkKXd_xsJu04Vaw_pvOtxfLGW7ROFqKoFog&usqp=CAU);
+    background-size: cover;
+    box-shadow: -1px 1px 142px -52px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 1px 142px -52px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 142px -52px rgba(0, 0, 0, 0.75);
+}
+
+.a1 {
+    margin-top: 12px;
+    margin-left: 26px;
+}
+
+.as1 {
+    font-weight: 600;
+}
+
+.as2 {
+    margin-left: 6px;
+}
+
+.infinix {
+    position: relative;
+    display: flex;
+    background-color: white;
+    height: 25vh;
+    width: 175vh;
+    left: 4.5vh;
+    top: 2vh;
+    background-image: url(https://images.olx.com.pk/thumbnails/405056607-800x600.webp);
+    background-position: center;
+    background-size: center;
+    background-repeat: no-repeat;
+
+}
+
+.hea1 {
+    margin-top: 12px;
+    margin-left: 18px;
+    font-weight: 700;
+    font-size: xx-large;
+}
+
+.Countainer1 {
+    background-color: white;
+    height: 17vh;
+    width: 150vh;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.Countainer2 {
+    background-color: white;
+    height: 15vh;
+    width: 150vh;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 42px;
+    top: 32px;
+}
+
+.option1 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/mobiles.8c768c96bfde33f18fcf5af2a8b9cf71.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option1 p {
+    position: absolute;
+    top: 78px;
+}
+
+.option2 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/vehicles.29fb808d5118f0db56f68a39ce5392e2.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option2 p {
+    position: absolute;
+    top: 78px;
+
+}
+
+.option3 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/property-for-sale.e3a00dbfdaa69fe5f713665f1069502f.png  );
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option3 p {
+    position: absolute;
+    top: 78px;
+    width: 10px;
+    height: 32px;
+}
+
+.option4 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/property-for-rent.8436595fbaa90d47f0178006f57090a8.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option4 p {
+    position: absolute;
+    top: 78px;
+    width: 10px;
+    height: 32px;
+}
+
+.option5 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/electronics-home-appliances.46e034dd8adca44625c2c70e4d1b5984.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option5 p {
+    position: absolute;
+    top: 78px;
+    width: 10px;
+    height: 32px;
+}
+
+.option6 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/bikes.4dcd02c49b2b83aa5b4d629d1e2b383e.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option6 p {
+    position: absolute;
+    top: 78px;
+}
+
+.option7 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/business-industrial-agriculture.704a6ffb9081bc94b11c102cc613670f.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option7 p {
+    position: absolute;
+    top: 78px;
+    width: 10px;
+    height: 32px;
+}
+
+.option8 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/services.dc6aef196c0403dc61b0ee813f66fa5b.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option8 p {
+    position: absolute;
+    top: 78px;
+}
+
+.option9 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/jobs.79e6136dda02111cf8e7afe26b9e0f93.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option9 p {
+    position: absolute;
+    top: 78px;
+}
+
+.option10 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 38px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/animals.62d396e85f7523dbc8ff23889fdd5c31.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option10 p {
+    position: absolute;
+    top: 78px;
+}
+
+.option11 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/furniture-home-decor.66bcf157a53ea4c736a5b0af41219475.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option11 p {
+    position: absolute;
+    top: 78px;
+    width: 10px;
+    height: 32px;
+}
+
+.option12 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/fashion-beauty.dd2cf7638c29b0e5c084a6673dd94dd7.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option12 p {
+    position: absolute;
+    top: 78px;
+    width: 10px;
+    height: 32px;
+}
+
+.option13 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/books-sports-hobbies.6fee8d841b332d65a10f050f4a2ee1c8.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option13 p {
+    position: absolute;
+    top: 78px;
+    width: 10px;
+    height: 32px;
+}
+
+.option14 {
+    background-color: black;
+    height: 52px;
+    width: 52px;
+    border-radius: 30px;
+    margin-left: 21px;
+    margin-top: 22px;
+    display: inline-block;
+    background-image: url(https://www.olx.com.pk/assets/kids.cd8d8864804f1c35dd6a7df68268a48d.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.option14 p {
+    position: absolute;
+    top: 78px;
+}
+
+.MP p {
+    font-size: x-large;
+    font-weight: 700;
+    color: black;
+    margin-top: 92px;
+    margin-left: 32px;
+    margin-bottom: 12px;
+
+}
+
+.CarsCountainer {
+    height: 90vh;
+    width: 170vh;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 5vh;
+    margin-left: 6vh;
+
+}
+
+.card1 {
+
+    left: 12px;
+    top: 33px;
+    height: 35vh;
+    width: 35vh;
+    border: 1px solid lightgray;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.P1 {
+    background-color: antiquewhite;
+    height: 15vh;
+    width: 35vh;
+    background-image: url(https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/2020-Chevrolet-Corvette-Stingray/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=960);
+    background-position: center;
+    background-size: cover;
+}
+
+.rs p {
+    font-size: larger;
+    padding-top: 16vh;
+    margin-left: 1vh;
+}
+
+.Name {
+    margin-top: 1.5vh;
+    margin-left: 1vh;
+}
+
+.Details {
+    font-size: small;
+    display: flex;
+    margin-top: 2vh;
+    margin-left: 1vh;
+}
+
+.Details i {}
+
+.Address {
+    font-size: small;
+    margin-top: 0.9vh;
+    margin-left: 1vh;
+}
+
+.time {
+    font-size: small;
+    margin-top: 1.2vh;
+    margin-left: 1vh;
+}
+
+.card2 {
+
+    left: 37vh;
+    top: 33px;
+    height: 35vh;
+    width: 35vh;
+    border: 1px solid lightgray;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.card3 {
+
+    left: 72vh;
+    top: 33px;
+    height: 35vh;
+    width: 35vh;
+    border: 1px solid lightgray;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.card4 {
+
+    left: 107vh;
+    top: 33px;
+    height: 35vh;
+    width: 35vh;
+    border: 1px solid lightgray;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.card5 {
+
+    left: 142vh;
+    top: 33px;
+    height: 35vh;
+    width: 35vh;
+    border: 1px solid lightgray;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.card6 {
+
+    left: 177vh;
+    top: 33px;
+    height: 35vh;
+    width: 35vh;
+    border: 1px solid lightgray;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.card7 {
+    left: 212vh;
+    top: 33px;
+    height: 35vh;
+    width: 35vh;
+    border: 1px solid lightgray;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.card8 {
+    left: 247vh;
+    top: 33px;
+    height: 35vh;
+    width: 35vh;
+    border: 1px solid lightgray;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.P2 {
+    background-color: antiquewhite;
+    height: 15vh;
+    width: 35vh;
+    background-image: url(https://hips.hearstapps.com/hmg-prod/images/2022-gr86-premium-trackbred-002-1628887849.jpg?crop=0.530xw:0.796xh;0.300xw,0.0962xh&resize=1200:*);
+    background-position: center;
+    background-size: cover;
+}
+
+.P3 {
+    background-color: antiquewhite;
+    height: 15vh;
+    width: 35vh;
+    background-image: url(https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNhcnN8ZW58MHx8MHx8fDA%3D);
+    background-position: center;
+    background-size: cover;
+}
+
+.P4 {
+    background-color: antiquewhite;
+    height: 15vh;
+    width: 35vh;
+    background-image: url(https://media.wired.com/photos/64f7c231542c5d0935dca057/191:100/w_1280,c_limit/Lamborghini-Lanzador-Drive-Featured-Gear.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.P5 {
+    background-color: antiquewhite;
+    height: 15vh;
+    width: 35vh;
+    background-image: url(https://www.topgear.com/sites/default/files/2022/07/13.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.P6 {
+    background-color: antiquewhite;
+    height: 15vh;
+    width: 35vh;
+    background-image: url(https://carwow-uk-wp-3.imgix.net/18015-MC20BluInfinito-scaled-e1666008987698.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.P7 {
+    background-color: antiquewhite;
+    height: 15vh;
+    width: 35vh;
+    background-image: url(https://carwow-uk-wp-3.imgix.net/Volvo-XC40-white-scaled.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.P8 {
+    background-color: antiquewhite;
+    height: 15vh;
+    width: 35vh;
+    background-image: url(https://cdn.jdpower.com/Average%20Weight%20Of%20A%20Car.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.A {
+    height: 30vh;
+    width: 186vh;
+    background-color: #ebeeef;
+    display: flex;
+    justify-content: flex-start;
+    gap: 17vh;
+}
+
+.a01 h1 {
+    font-size: small;
+    color: #c0c0c0;
+    margin-bottom: 12px;
+}
+
+.a01 {
+    width: 14vh;
+    height: 12vh;
+    display: inline-block;
+    margin-top: 32px;
+    margin-left: 12px;
+
+}
+
+.b2 {
+    display: inline-block;
+}
+.b3 {
+    display: inline-block;
+}
+.a2 {
+    width: 14vh;
+    height: 12vh;
+    display: inline-block;
+    margin-top: 32px;
+}
+.a2 h1 {
+    font-size: small;
+    color: #c0c0c0;
+    margin-bottom: 12px;
+}
+.a3 {
+    width: 14vh;
+    height: 12vh;
+    display: inline-block;
+    margin-top: 32px;
+}
+.a3 h1 {
+    font-size: small;
+    color: #c0c0c0;
+    margin-bottom: 12px;
+}
+.a4 {
+    width: 14vh;
+    height: 12vh;
+    display: inline-block;
+    margin-top: 32px;
+}
+.a4 h1 {
+    font-size: small;
+    color: #c0c0c0;
+    margin-bottom: 12px;
+}
+
+.b4{
+    width: 32vh;
+    display: inline-block;
+}
+.c1 p{
+     font-weight: 700;
+     font-size: medium;
+     display: inline-block;
+     margin-left: 44px;
+}
+.a5{
+    display: flex;
+    margin-top: 32px;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.A6{
+    display: flex;
+    gap: 12px;
+}
+.a6{
+    background-color: black;
+    background-color: black;
+    width: 7.6rem;
+    margin-top: 8vh;
+    background-image: url(https://www.olx.com.pk/assets/iconAppStoreEN_noinline.a731d99c8218d6faa0e83a6d038d08e8.svg);
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+
+}
+.a7{
+    background-color: black;
+    width: 7.6rem;
+    height: 2rem;
+    margin-top: 8vh;
+    background-image: url(https://www.olx.com.pk/assets/iconGooglePlayEN_noinline.9892833785b26dd5896b7c70b089f684.svg);
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.a8{
+    background-color: black;
+    background-color: black;
+    width: 7.6rem;
+    margin-top: 8vh;
+    background-image: url(https://www.olx.com.pk/assets/iconAppGallery_noinline.6092a9d739c77147c884f1f7ab3f1771.svg);
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.A5{
+    margin-top: 32px;
+}
+.X1{
+   height: 6vh;
+   width: 186vh;
+   background-color: #002f34 ;
+   display:flex;
+}
+.x1{
+    color: white;
+    text-align: right;
+    margin-left:860px;
+    margin-top: 12px;
+}
